@@ -21,7 +21,7 @@ body {
     overflow: hidden;
     z-index: -1;
 	transform: translate(-50%, -50%) scale(1.1);
-    filter: blur(15px);
+    filter: blur(5px);
 }
 
 .background-video video {
