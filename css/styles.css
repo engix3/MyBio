@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 
 * {
     margin: 0;
@@ -71,7 +71,7 @@ body {
 }
 
 .nickname {
-    font-family: "Roboto", sans-serif;
+    font-family: "Inter", sans-serif;
     color: white;
 	margin: 0;
 	margin-bottom: -10px;
