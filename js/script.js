@@ -30,13 +30,17 @@ function getRandomPosition(rectangle, size) {
 }
 
 function createRandomCircle(rectangleElement) {
-  const rectangle = rectangleElement;
-  const circle = document.createElement("div");
-  const size = Math.floor(Math.random() * 100) + 10;
-  const position = getRandomPosition(rectangle, size);
-  const duration = 5 + Math.random() * 5;
-  const finalPosition = getRandomPosition(rectangle, size);
+  if (!rectangleElement) {
+    console.error("Rectangle element is null or undefined");
+    return;
+  }
 
+  const size = Math.floor(Math.random() * 100) + 10;
+  const position = getRandomPosition(rectangleElement, size);
+  const duration = 5 + Math.random() * 5;
+  const finalPosition = getRandomPosition(rectangleElement, size);
+
+  const circle = document.createElement("div");
   circle.style.width = `${size}px`;
   circle.style.height = `${size}px`;
   circle.style.left = `${position.x}px`;
@@ -64,10 +68,15 @@ function createRandomCircle(rectangleElement) {
     createRandomCircle(rectangleElement);
   };
 
-  rectangle.appendChild(circle);
+  rectangleElement.appendChild(circle);
 }
 
 function createRandomCircles(rectangleElement) {
+  if (!rectangleElement) {
+    console.error("Rectangle element is null or undefined");
+    return;
+  }
+
   const numberOfCircles = Math.floor(Math.random() * 10) + 1;
 
   for (let i = 0; i < numberOfCircles; i++) {
@@ -75,15 +84,15 @@ function createRandomCircles(rectangleElement) {
   }
 }
 
-const rectangleElement = document.querySelector(".rectangle");
-const spotifyPlayerElement = document.querySelector(".spotifyplayer");
-const rectangle2Element = document.querySelector(".rectangle-right");
-
-createRandomCircles(rectangleElement);
-createRandomCircles(spotifyPlayerElement);
-createRandomCircles(rectangle2Element);
-
 document.addEventListener("DOMContentLoaded", function () {
+  const rectangleElement = document.querySelector(".rectangle");
+  const spotifyPlayerElement = document.querySelector(".spotifyplayer");
+  const rectangle2Element = document.querySelector(".rectangle-right");
+
+  createRandomCircles(rectangleElement);
+  createRandomCircles(spotifyPlayerElement);
+  createRandomCircles(rectangle2Element);
+
   const videoFiles = [
     "media/video1.mp4",
     "media/video2.mp4",
