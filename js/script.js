@@ -45,7 +45,7 @@ function createRandomCircle(rectangleElement) {
   circle.style.height = `${size}px`;
   circle.style.left = `${position.x}px`;
   circle.style.top = `${position.y}px`;
-  circle.style.backgroundColor = "rgba(255, 0, 255, 1)";
+  circle.style.backgroundColor = "rgba(0, 17, 255, 1)";
   circle.style.position = "absolute";
   circle.style.borderRadius = "50%";
   circle.style.filter = "blur(50px)";
